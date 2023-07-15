@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% block body %}
+   <div class = 'form-div'>
+    <h1> Enter The Details here :
+    <form action="{{url_for('predict_datapoint')}}" method="POST">  
+      
+        <div class="form-group"> 
+
+            <label for="gender">gender</label>
+  
+            <select id="gender" name="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            
+        </div>
+  
+      <div class="form-group">
+
+          <label for="married">married</label>
+
+          <select id="married" name="married">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+
+      </div>
+  
+      <div class="form-group">  
+
+          <label for="dependents">dependents</label> 
+
+          <select id="dependents" name="dependents">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3+">3+</option>
+          </select>
+
+      </div>
+      
+      <div class="form-group">
+
+          <label for="education">education</label>
+
+          <select id="education" name="education">
+            <option value="Graduate">Graduate</option>
+            <option value="Not Graduate">Not Graduate</option>
+          </select>
+          
+      </div>
+    
+      <div class="form-group">
+          <label for="self_employed">self_employed</label>
+          
+          <select id="self_employed" name="self_employed">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+
+      </div>
+    
+      <div class="form-group">
+          <label for="applicantincome">applicantincome</label>
+          <input type="text" id="applicantincome" name="applicantincome" placeholder="Enter applicantincome value">
+      </div>   
+      
+      <div class="form-group">
+        <label for="coapplicantincome">coapplicantincome</label>
+        <input type="text" id="coapplicantincome" name="coapplicantincome" placeholder="Enter coapplicantincome value">
+      </div> 
+      
+      <div class="form-group">
+        <label for="loanamount">loanamount</label>
+        <input type="text" id="loanamount" name="loanamount" placeholder="Enter loanamount value">
+      </div> 
+      
+      <div class="form-group">
+        <label for="loan_amount_term">loan_amount_term</label>
+        <input type="text" id="loan_amount_term" name="loan_amount_term" placeholder="Enter loan_amount_term value ">
+      </div> 
+      
+      <div class="form-group">
+        <label for="credit_history">credit_history</label>
+        <input type="text" id="credit_history" name="credit_history" placeholder="Enter credit_history value (float)">
+      </div> 
+      
+      <div class="form-group">
+        <label for="property_area">property_area</label>
+
+        <select id="property_area" name="property_area">
+            <option value="Urban">Urban</option>
+            <option value="Rural">Rural</option>
+            <option value="Semiurban">Semiurban</option>
+          </select>
+
+      </div> 
+
+  
+  <div style="clear:both;"></div>
+  
+    <input type="submit" value="Submit" class = "submit-btn">
+  
+  </form>
+</div>
+  
+{% endblock %}
+</body>
+</html>
